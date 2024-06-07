@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5 tp2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Área de Terreno</h1>
+        <form id="areaForm">
+            <label for="length">Largo (m):</label>
+            <input type="number" id="length" name="length" step="0.01" required>
+
+            <label for="width">Ancho (m):</label>
+            <input type="number" id="width" name="width" step="0.01" required>
+
+            <button type="button" onclick="calculateArea()">Calcular</button>
+        </form>
+    </div>
+</body>
+<script>
+    function calculateArea() {
+    const length = parseFloat(document.getElementById('length').value);
+    const width = parseFloat(document.getElementById('width').value);
+
+    if (!isNaN(length) && !isNaN(width) && length > 0 && width > 0) {
+        const area = length * width;
+        alert(`El área del terreno es ${area.toFixed(2)} metros cuadrados`);
+    } else {
+        alert('Por favor, introduce valores válidos para largo y ancho.');
+    }
+}
+</script>
+</html>
